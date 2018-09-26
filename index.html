@@ -35,7 +35,7 @@
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
 							<h1>Gender Predictor</h1>
-							<p>Use the power of machine learning to predict who wrote an Amazon review.</p>
+							<p>Use the power of <b>machine learning</b> to predict who wrote an Amazon review.</p>
 							<ul class="actions">
 								<li><a href="#one" class="button scrolly">Try our Demo</a></li>
 							</ul>
@@ -51,10 +51,14 @@
 									<h2>Model Demo</h2>
 									<p>Please insert a text sample you would like to test.</p>
 									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
+										<form>
+											<input type="text">
+											<br>
+											<li><a href="#one" class="button">Submit</a></li>
+										</form>
 									</ul>
 								</div>
-							</div>
+							</div>r
 						</section>
 					<!-- 	<section>
 							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
@@ -89,23 +93,23 @@
 							<p>Below is a brief description of our methodology. You can also download a full project report <a href=" ">[add link]</a></p>
 							<div class="features">
 								<section>
+									<span class="icon major fa-database"></span>
+									<h3>1. Amazon Data Analysis</h3>
+									<p>The data does not explicitly state whether or not someone is male or female so the team must solve this piece of data engineering first. </p> <p> Our dataset in JSON format contained roughly 1.3 million records, including self-determined usernames, review texts, product IDs, and user ratings.</p>
+								</section>
+								<section>
 									<span class="icon major fa-code"></span>
-									<h3>Amazon Data Analysis</h3>
-									<p>The data does not explicitly state whether or not someone is male or female so the team must solve this piece of data engineering first. Our dataset in JSON format contained roughly 1.3 million records, including self-determined usernames, review texts, product IDs, and user ratings.</p>
+									<h3>2. Data Clean-Up & Labeling</h3>
+									<p>We chose the <a href="https://test.pypi.org/project/gender-guesser/">GenderGuesser</a> Python library that contains a list of more than 40,000 first names and gender. GenderGuesser labels data as “male/female”, “mostly male/female” and “unknown”.</p> <p> To ensure high quality of the data used in our prediction model, we only used unambiguous data labels.</p>
+								</section>
+								<section>
+									<span class="icon major fa-language"></span>
+									<h3>3. Text Preprocessing using NLTK</h3>
+									<p>The <a href="http://www.nltk.org/">NLTK</a> (The Natural Language Toolkit) is one of the most well-known language processing libraries in the industry. </p> <p>We eliminated stopwords, expanded contractions, stemmed the text, formatted and removed unwanted characters using regular expressions, and encoded the genders.</p>
 								</section>
 								<section>
 									<span class="icon major fa-cog"></span>
-									<h3>Data Clean-Up & Labeling</h3>
-									<p>We chose the Gender Guesser Python library that contains a list of more than 40,000 first names and gender. GenderGuesser labels data as “male/female”, “mostly male/female” and “unknown”. To ensure high quality of the data used in our prediction model, we only used unambiguous data labels.</p>
-								</section>
-								<section>
-									<span class="icon major fa-desktop"></span>
-									<h3>Text Preprocessing using NLTK</h3>
-									<p>The NLTK (The Natural Language Toolkit) is one of the most well-known language processing libraries in the industry. We eliminated stopwords, expanded contractions, stemmed the text, formatted and removed unwanted characters using regular expressions, and encoded the genders.</p>
-								</section>
-								<section>
-									<span class="icon major fa-chain"></span>
-									<h3>Applying our ML Model</h3>
+									<h3>4. Applying our ML Model</h3>
 									<p>We used convolutional neural networks to predict the gender with highest accuracy. The model consists of {xx} layers and uses relu and sigmoid activation functions.</p>
 								</section>
 							</div>
